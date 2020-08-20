@@ -1,0 +1,7 @@
+
+
+#Azure AD connect sync 
+  - Start-ADSyncSyncCycle -PolicyType Initial (initiates a full
+  synchronization)
+  - Start-ADSyncSyncCycle -PolicyType Delta (initiates a delta
+  synchronization)
