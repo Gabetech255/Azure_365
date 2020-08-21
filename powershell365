@@ -24,3 +24,10 @@ Server must be a member of a domain and connect to a writable DC. Synchronizatio
     SSL TCP 443
     SMB TCP 445
 
+#AAD create dynamic group 
+1.   Run install-module azuread.
+2.   Run import-module azuread.
+3.   Run get-module azuread.
+4.   Run connect-azuread:
+Get-AzureADGroup -Filter "DisplayName eq 'Marketing
+Users'"
