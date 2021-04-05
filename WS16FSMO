@@ -14,4 +14,13 @@ seize RID master
 seize schema master 
 seize naming master 
 
-#go to active directory domains and trusts and go to operations master 
+#go to active directory domains and trusts and go to operations master to confirm dc is now in the role 
+
+open cmd 
+regsvr32 schmmgmt.dll
+
+open mmc 
+add snapin for active directory schema 
+# if you need to recover data from the domain controller start it up off the network as it will cause issues within the -
+# - domain as there are two fsmo servers 
+
