@@ -1,0 +1,17 @@
+
+#recover FSMO roles from down domain controllers 
+ntdsutil
+activate instance ntds 
+roles 
+#fsmo maintainance 
+connections 
+connect to server [dc01.domainname.com]
+quit
+
+seize infrastructure master 
+seize pdc 
+seize RID master 
+seize schema master 
+seize naming master 
+
+#go to active directory domains and trusts and go to operations master 
