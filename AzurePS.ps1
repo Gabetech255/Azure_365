@@ -11,6 +11,23 @@ $Subnet1 = New-AzVirtualNetworkSubnetConfig -Name Subnet1 -AddressPrefix "10.0.1
 $Subnet2  = New-AzVirtualNetworkSubnetConfig -Name Subnet2  -AddressPrefix "10.0.2.0/24"
 New-AzVirtualNetwork -Name MyVirtualNetwork -ResourceGroupName labrg1 -Location centralus -AddressPrefix "10.0.0.0/16" -Subnet $Subnet1,$Subnet2
 
+
+##Migration - Bulk import of users 
+$invitations = import-csv c:\bulkinvite\invitations.csv
+
+$messageInfo = New-Object Microsoft.Open.MSGraph.Model.InvitedUserMessageInfo
+
+$messageInfo.customizedMessageBody = "Hello. You are invited to the Contoso organization."
+
+foreach ($email in $invitations)
+   {New-AzureADMSInvitation `
+      -InvitedUserEmailAddress $email.InvitedUserEmailAddress `
+      -InvitedUserDisplayName $email.Name `
+      -InviteRedirectUrl https://myapps.microsoft.com `
+      -InvitedUserMessageInfo $messageInfo `
+      -SendInvitationMessage $true
+   }
+
 ##KEYVAULT (Azure Cli)
 
 az keyvault create --resource-group MorningLab --location centralus --name MyMorningCoffeeVault
