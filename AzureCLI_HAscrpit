@@ -8,3 +8,8 @@ az group show --name $resourceGroupName
 echo "Enter the Resource Group name:" &&
 read resourceGroupName &&
 az lock create --name LockGroup --lock-type CanNotDelete --resource-group $resourceGroupName
+
+// D
+echo "Enter the Resource Group name:" &&
+read resourceGroupName &&
+az group export --name $resourceGroupName
