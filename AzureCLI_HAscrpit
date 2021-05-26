@@ -1,0 +1,10 @@
+az group list
+
+echo "Enter the Resource Group name:" &&
+read resourceGroupName &&
+az group show --name $resourceGroupName
+
+// Create a Resource Group Lock to protect critical production enviroments and critical projects 
+echo "Enter the Resource Group name:" &&
+read resourceGroupName &&
+az lock create --name LockGroup --lock-type CanNotDelete --resource-group $resourceGroupName
