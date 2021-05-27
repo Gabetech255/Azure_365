@@ -13,3 +13,14 @@ az lock create --name LockGroup --lock-type CanNotDelete --resource-group $resou
 echo "Enter the Resource Group name:" &&
 read resourceGroupName &&
 az group export --name $resourceGroupName
+
+
+echo "Enter the Resource Group name:" &&
+read resourceGroupName &&
+echo "Enter the storage account name:" &&
+read storageAccountName &&
+storageAccount=$(az resource show --resource-group $resourceGroupName --name $storageAccountName --resource-type Microsoft.Storage/storageAccounts --query id --output tsv) &&
+az group export --resource-group $resourceGroupName --resource-ids $storageAccount
+
+az group export --resource-group <resource-group-name> --resource-ids $storageAccount1 $storageAccount2
+
