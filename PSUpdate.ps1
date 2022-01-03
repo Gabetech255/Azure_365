@@ -16,3 +16,4 @@ if ($currenttime -eq '15:28') {
 Clear-Variable -Name 'userName'
 Clear-Variable -Name 'currenttime'
 
+#
