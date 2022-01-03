@@ -12,7 +12,7 @@ $Subnet2  = New-AzVirtualNetworkSubnetConfig -Name Subnet2  -AddressPrefix "10.0
 New-AzVirtualNetwork -Name MyVirtualNetwork -ResourceGroupName labrg1 -Location centralus -AddressPrefix "10.0.0.0/16" -Subnet $Subnet1,$Subnet2
 
 
-##Migration - Bulk import of users 
+##Migration - Bulk import of users.
 $invitations = import-csv c:\bulkinvite\invitations.csv
 
 $messageInfo = New-Object Microsoft.Open.MSGraph.Model.InvitedUserMessageInfo
