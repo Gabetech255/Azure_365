@@ -23,4 +23,4 @@ storageAccount=$(az resource show --resource-group $resourceGroupName --name $st
 az group export --resource-group $resourceGroupName --resource-ids $storageAccount
 
 az group export --resource-group <resource-group-name> --resource-ids $storageAccount1 $storageAccount2
-
+//
