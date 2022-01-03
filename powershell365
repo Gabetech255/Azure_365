@@ -7,7 +7,7 @@
   synchronization)
 
 
-#CHECK DC Forest functional level
+#CHECK DC Forest functional level.
 get-ADForest
 
 AZURE AD CONNECT
